@@ -1,34 +1,34 @@
 CREATE TABLE clients (
-company_id SMALLINT UNSIGNED AUTO_INCREMENT,
-company_name VARCHAR(20),
-company_type ENUM('sole','part'),
-PRIMARY KEY(company_id)
+    company_id SMALLINT UNSIGNED AUTO_INCREMENT,
+    company_name VARCHAR(20),
+    company_type ENUM('sole','part'),
+    PRIMARY KEY(company_id)
 )ENGINE=INNODB;
 
 CREATE TABLE sectors (
-sector_id SMALLINT UNSIGNED,
-sector_name VARCHAR(20),
-asset_turnover float(5,1),
-net_pm float(5,1),
-debt_to_eq float(5,1),
-PRIMARY KEY(sector_id)
+    sector_id SMALLINT UNSIGNED,
+    sector_name VARCHAR(20),
+    asset_turnover float(5,1),
+    net_pm float(5,1),
+    debt_to_eq float(5,1),
+    PRIMARY KEY(sector_id)
 )ENGINE=INNODB;
 
 CREATE TABLE client_detail (
-company_id SMALLINT UNSIGNED,
-sector_id SMALLINT UNSIGNED,
-debt_to_eq FLOAT(3,1),
-gross_pm float(5,1),
-net_pm float(5,1),
-return_on_assets float(5,1),
-return_on_equity float(5,1),
-interest_coverage INT,
+    company_id SMALLINT UNSIGNED,
+    sector_id SMALLINT UNSIGNED,
+    debt_to_eq FLOAT(3,1),
+    gross_pm float(5,1),
+    net_pm float(5,1),
+    return_on_assets float(5,1),
+    return_on_equity float(5,1),
+    interest_coverage INT,
 
-FOREIGN KEY (company_id)
-REFERENCES clients(company_id),
+    FOREIGN KEY (company_id)
+    REFERENCES clients(company_id),
 
-FOREIGN KEY (sector_id)
-REFERENCES sectors(sector_id)
+    FOREIGN KEY (sector_id)
+    REFERENCES sectors(sector_id)
 )ENGINE=INNODB;
 
 CREATE TABLE loan_products (
