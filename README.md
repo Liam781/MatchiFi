@@ -11,7 +11,7 @@ The program is also aimed at streamlining access to information about funding op
 
 A team of 5 contributed to the development of this program. A collaboration between Computer Science practitioners and Finance professionals. 
 
-MatchiFi fetches data from users through a UI by prompting users to enter the relevant data points which are then stored in an SQL database.
+MatchiFi fetches data from users through a UI by prompting users to enter the relevant set of data which is then stored in an SQL database.
 The program then fetches data from the database, converts it into a pandas dataframe to be fed into the ML model. It then returns a response. 
 
 ## Contributing
